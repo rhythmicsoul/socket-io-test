@@ -5,7 +5,7 @@ from flask_socketio import send, emit
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*", path="/ws/socket.io")
 
 @socketio.on('message')
 def handle_message(data):

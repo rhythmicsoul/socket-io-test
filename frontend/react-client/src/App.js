@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     // socket.current = io("ws://localhost:5000");
-    socket.current = io("ws://localhost");
+    socket.current = io("ws://localhost", {path: "/ws/socket.io" });
 
     socket.current.on("connnection", () => {
       console.log("connected to server");
